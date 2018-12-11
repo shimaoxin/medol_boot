@@ -35,7 +35,7 @@ public class UserController {
     public int addUser() {
         User user = new User();
         user.setId(UUID.randomUUID().toString());
-        user.setUsername("岳陈");
+        user.setUserName("岳陈");
         return userService.insertSelective(user);
     }
 

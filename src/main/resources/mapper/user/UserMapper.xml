@@ -3,11 +3,11 @@
 <mapper namespace="model.boot_mybatis.dao.user.UserMapper" >
   <resultMap id="BaseResultMap" type="model.boot_mybatis.model.user.User" >
     <id column="id" property="id" jdbcType="VARCHAR" />
-    <result column="userName" property="username" jdbcType="VARCHAR" />
-    <result column="loginName" property="loginname" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="login_name" property="loginName" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="historyPwd" property="historypwd" jdbcType="VARCHAR" />
-    <result column="photoPath" property="photopath" jdbcType="VARCHAR" />
+    <result column="history_pwd" property="historyPwd" jdbcType="VARCHAR" />
+    <result column="photo_path" property="photoPath" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -69,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, userName, loginName, password, historyPwd, photoPath, phone
+    id, user_name, login_name, password, history_pwd, photo_path, phone
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="model.boot_mybatis.model.user.UserExample" >
     select
@@ -102,11 +102,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="model.boot_mybatis.model.user.User" >
-    insert into t_user (id, userName, loginName, 
-      password, historyPwd, photoPath, 
+    insert into t_user (id, user_name, login_name, 
+      password, history_pwd, photo_path, 
       phone)
-    values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{loginname,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{historypwd,jdbcType=VARCHAR}, #{photopath,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{loginName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{historyPwd,jdbcType=VARCHAR}, #{photoPath,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="model.boot_mybatis.model.user.User" >
@@ -115,20 +115,20 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="username != null" >
-        userName,
+      <if test="userName != null" >
+        user_name,
       </if>
-      <if test="loginname != null" >
-        loginName,
+      <if test="loginName != null" >
+        login_name,
       </if>
       <if test="password != null" >
         password,
       </if>
-      <if test="historypwd != null" >
-        historyPwd,
+      <if test="historyPwd != null" >
+        history_pwd,
       </if>
-      <if test="photopath != null" >
-        photoPath,
+      <if test="photoPath != null" >
+        photo_path,
       </if>
       <if test="phone != null" >
         phone,
@@ -138,20 +138,20 @@
       <if test="id != null" >
         #{id,jdbcType=VARCHAR},
       </if>
-      <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="loginname != null" >
-        #{loginname,jdbcType=VARCHAR},
+      <if test="loginName != null" >
+        #{loginName,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="historypwd != null" >
-        #{historypwd,jdbcType=VARCHAR},
+      <if test="historyPwd != null" >
+        #{historyPwd,jdbcType=VARCHAR},
       </if>
-      <if test="photopath != null" >
-        #{photopath,jdbcType=VARCHAR},
+      <if test="photoPath != null" >
+        #{photoPath,jdbcType=VARCHAR},
       </if>
       <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
@@ -170,20 +170,20 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=VARCHAR},
       </if>
-      <if test="record.username != null" >
-        userName = #{record.username,jdbcType=VARCHAR},
+      <if test="record.userName != null" >
+        user_name = #{record.userName,jdbcType=VARCHAR},
       </if>
-      <if test="record.loginname != null" >
-        loginName = #{record.loginname,jdbcType=VARCHAR},
+      <if test="record.loginName != null" >
+        login_name = #{record.loginName,jdbcType=VARCHAR},
       </if>
       <if test="record.password != null" >
         password = #{record.password,jdbcType=VARCHAR},
       </if>
-      <if test="record.historypwd != null" >
-        historyPwd = #{record.historypwd,jdbcType=VARCHAR},
+      <if test="record.historyPwd != null" >
+        history_pwd = #{record.historyPwd,jdbcType=VARCHAR},
       </if>
-      <if test="record.photopath != null" >
-        photoPath = #{record.photopath,jdbcType=VARCHAR},
+      <if test="record.photoPath != null" >
+        photo_path = #{record.photoPath,jdbcType=VARCHAR},
       </if>
       <if test="record.phone != null" >
         phone = #{record.phone,jdbcType=VARCHAR},
@@ -196,11 +196,11 @@
   <update id="updateByExample" parameterType="map" >
     update t_user
     set id = #{record.id,jdbcType=VARCHAR},
-      userName = #{record.username,jdbcType=VARCHAR},
-      loginName = #{record.loginname,jdbcType=VARCHAR},
+      user_name = #{record.userName,jdbcType=VARCHAR},
+      login_name = #{record.loginName,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
-      historyPwd = #{record.historypwd,jdbcType=VARCHAR},
-      photoPath = #{record.photopath,jdbcType=VARCHAR},
+      history_pwd = #{record.historyPwd,jdbcType=VARCHAR},
+      photo_path = #{record.photoPath,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -209,20 +209,20 @@
   <update id="updateByPrimaryKeySelective" parameterType="model.boot_mybatis.model.user.User" >
     update t_user
     <set >
-      <if test="username != null" >
-        userName = #{username,jdbcType=VARCHAR},
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="loginname != null" >
-        loginName = #{loginname,jdbcType=VARCHAR},
+      <if test="loginName != null" >
+        login_name = #{loginName,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="historypwd != null" >
-        historyPwd = #{historypwd,jdbcType=VARCHAR},
+      <if test="historyPwd != null" >
+        history_pwd = #{historyPwd,jdbcType=VARCHAR},
       </if>
-      <if test="photopath != null" >
-        photoPath = #{photopath,jdbcType=VARCHAR},
+      <if test="photoPath != null" >
+        photo_path = #{photoPath,jdbcType=VARCHAR},
       </if>
       <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
@@ -232,11 +232,11 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="model.boot_mybatis.model.user.User" >
     update t_user
-    set userName = #{username,jdbcType=VARCHAR},
-      loginName = #{loginname,jdbcType=VARCHAR},
+    set user_name = #{userName,jdbcType=VARCHAR},
+      login_name = #{loginName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      historyPwd = #{historypwd,jdbcType=VARCHAR},
-      photoPath = #{photopath,jdbcType=VARCHAR},
+      history_pwd = #{historyPwd,jdbcType=VARCHAR},
+      photo_path = #{photoPath,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>

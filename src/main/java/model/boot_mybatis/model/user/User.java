@@ -3,15 +3,15 @@ package model.boot_mybatis.model.user;
 public class User {
     private String id;
 
-    private String username;
+    private String userName;
 
-    private String loginname;
+    private String loginName;
 
     private String password;
 
-    private String historypwd;
+    private String historyPwd;
 
-    private String photopath;
+    private String photoPath;
 
     private String phone;
 
@@ -23,20 +23,20 @@ public class User {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
-    public String getLoginname() {
-        return loginname;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setLoginname(String loginname) {
-        this.loginname = loginname == null ? null : loginname.trim();
+    public void setLoginName(String loginName) {
+        this.loginName = loginName == null ? null : loginName.trim();
     }
 
     public String getPassword() {
@@ -47,20 +47,20 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getHistorypwd() {
-        return historypwd;
+    public String getHistoryPwd() {
+        return historyPwd;
     }
 
-    public void setHistorypwd(String historypwd) {
-        this.historypwd = historypwd == null ? null : historypwd.trim();
+    public void setHistoryPwd(String historyPwd) {
+        this.historyPwd = historyPwd == null ? null : historyPwd.trim();
     }
 
-    public String getPhotopath() {
-        return photopath;
+    public String getPhotoPath() {
+        return photoPath;
     }
 
-    public void setPhotopath(String photopath) {
-        this.photopath = photopath == null ? null : photopath.trim();
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath == null ? null : photoPath.trim();
     }
 
     public String getPhone() {
