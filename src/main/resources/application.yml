@@ -1,6 +1,6 @@
 spring:
     profiles:
-        active: test   #环境配置
+        active: dev   #环境配置
 
 mybatis:
     mapper-locations: mapper/**/*Mapper.xml

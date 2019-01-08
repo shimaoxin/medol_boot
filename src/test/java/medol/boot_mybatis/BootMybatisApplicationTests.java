@@ -11,8 +11,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.UUID;
 
 @RunWith(SpringRunner.class)
@@ -53,11 +51,6 @@ public class BootMybatisApplicationTests {
 				userService.insertSelective(user);
 			}
 		}
-	}
-
-	public static void main(String[] args) throws Exception{
-		String s = null;
-		InputStream is = new FileInputStream(s);
 	}
 
 }
