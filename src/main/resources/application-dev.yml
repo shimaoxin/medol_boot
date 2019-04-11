@@ -12,6 +12,10 @@ spring:
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
+    rabbitmq:
+        addresses: 127.0.0.1
+        username: guest
+        password: guest
 
 #redis连接配置
 redis:

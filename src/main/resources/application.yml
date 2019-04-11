@@ -1,6 +1,20 @@
 spring:
     profiles:
-        active: dev   #环境配置
+        active: prod   #环境配置
+
+server:
+    tomcat:
+        accesslog:
+          buffered: true
+          directory: E:/log/access
+          enabled: true
+          file-date-format: .yyyy-MM-dd
+          pattern: common
+          prefix: access_log
+          rename-on-rotate: false
+          request-attributes-enabled: true
+          rotate: true
+          suffix: .log
 
 mybatis:
     mapper-locations: mapper/**/*Mapper.xml

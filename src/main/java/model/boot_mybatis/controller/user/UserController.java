@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import model.boot_mybatis.model.user.User;
 import model.boot_mybatis.model.user.UserExample;
+import model.boot_mybatis.mq.rabbitMQ.producer.RabbitDemoProducer;
 import model.boot_mybatis.service.user.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,9 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    private RabbitDemoProducer rabbitDemoProducer;
 
     @RequestMapping("/showUser")
     @ResponseBody
@@ -45,5 +49,12 @@ public class UserController {
         user.setUserName("岳陈");
         return userService.insertSelective(user);
     }
+
+    @RequestMapping("/mqTest")
+    public void mqTest() {
+        rabbitDemoProducer.topicTopicSend();
+    }
+
+
 
 }
